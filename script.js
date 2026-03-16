@@ -26,18 +26,12 @@ async function generateScript() {
     4. Gợi ý góc quay (Visual B-roll).`;
 
     try {
-        const response = await fetch(API_URL, {
-            method: 'POST',
-            headers: { 
-                "Authorization": `Bearer ${GROQ_API_KEY}`,
-                "Content-Type": "application/json" 
-            },
-            body: JSON.stringify({
-                model: "llama3-8b-8192", // Model cực nhanh của Groq
-                messages: [{ role: "user", content: promptText }]
-            })
-        });
-
+        // Thay đổi fetch thành:
+const response = await fetch('/api/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ productName, style })
+});
         const data = await response.json();
         
         // Kiểm tra lỗi từ API
