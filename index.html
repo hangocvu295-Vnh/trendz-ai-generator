@@ -8,21 +8,18 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>✨ ViralScript AI</h1>
-        <p class="subtitle">Biến ý tưởng thành kịch bản video triệu view</p>
+    <div class="input-group">
+    <input type="password" id="apiKey" placeholder="Nhập Groq API Key của bạn..." required>
+    <input type="text" id="productName" placeholder="Tên sản phẩm của bạn..." required>
+    
+    <select id="styleSelect">
+        <option value="Hài hước">Phong cách: Hài hước</option>
+        <option value="Chuyên gia">Phong cách: Chuyên gia</option>
+        <option value="Drama">Phong cách: Drama/Kịch tính</option>
+    </select>
 
-        <div class="input-group">
-            <input type="text" id="productName" placeholder="Tên sản phẩm của bạn..." required>
-            
-            <select id="styleSelect">
-                <option value="Hài hước">Phong cách: Hài hước</option>
-                <option value="Chuyên gia">Phong cách: Chuyên gia</option>
-                <option value="Drama">Phong cách: Drama/Kịch tính</option>
-            </select>
-
-            <button id="generateBtn" onclick="generateScript()">Tạo kịch bản ngay</button>
-        </div>
+    <button id="generateBtn" onclick="generateScript()">Tạo kịch bản ngay</button>
+</div>
 
         <div id="output" class="result-box">
             <p class="placeholder">Kết quả sẽ hiển thị ở đây...</p>

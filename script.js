@@ -1,17 +1,17 @@
 // script.js
+// script.js
 async function generateScript() {
+    const apiKey = document.getElementById('apiKey').value; // Lấy từ input
     const productName = document.getElementById('productName').value;
     const style = document.getElementById('styleSelect').value;
     const resultDiv = document.getElementById('output');
     
-    // API Key của Groq
-    const GROQ_API_KEY = "YOUR_API_KEY_HERE"; // Để như này thôi
-    const API_URL = "https://api.groq.com/openai/v1/chat/completions";
-
-    if (!productName) {
-        alert("Nhập tên sản phẩm đi bạn ơi!");
+    if (!apiKey) {
+        alert("Vui lòng nhập API Key trước!");
         return;
     }
+    // ... Phần còn lại giữ nguyên như cũ ...
+}
 
     // Hiệu ứng loading chuyên nghiệp
     resultDiv.innerHTML = `<div class="loader">Đang "cook" kịch bản viral cho bạn...</div>`;
@@ -54,4 +54,3 @@ async function generateScript() {
         console.error("Lỗi:", error);
         resultDiv.innerHTML = `<p style="color: #ff4d4d;">Oops! ${error.message}. Kiểm tra lại mạng hoặc API Key nhé!</p>`;
     }
-}
